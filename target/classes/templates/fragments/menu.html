@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+</head>
+<body>
+	<nav class="sidebar sidebar-open" th:fragment="menulateral">
+		<ul class="nav nav-pills">
+			<li class="nav-item active"><a class="nav-link active"
+				href="/"> <i class="oi oi-home"></i> <span>Home</span>
+			</a></li>
+		</ul>
+
+		<ul class="nav nav-pills">
+			<li class="nav-item active"><a class="nav-link active"
+				href="#"> <i class="oi oi-plus"></i> <span>Criar Turma</span>
+			</a></li>
+		</ul>
+
+		<ul class="nav nav-pills">
+			<li class="nav-item">
+				<span class="nav-link active"><i class="oi oi-collapse-down"></i> Ministrando</span></li> <!-- implementar collapse down -->
+			<li class="nav-item"><a class="nav-link" href="#"> <i
+					class="oi oi-book"></i> <span>Turma 1</span><!-- inserir dinamicamente -->
+			</a></li>
+		</ul>
+
+		<ul class="nav nav-pills">
+			<li class="nav-item">
+				<span class="nav-link active"><i class="oi oi-collapse-down"></i> Cursando</span></li> <!-- implementar collapse down -->
+			<li class="nav-item"><a class="nav-link" href="#"> <i
+					class="oi oi-book"></i> <span>Turma 1</span><!-- inserir dinamicamente -->
+			</a></li>
+		</ul>
+	</nav>
+
+</body>
+</html>

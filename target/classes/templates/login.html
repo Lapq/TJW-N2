@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Tópicos em Java para a web</title>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="icon" href="/image/favicon.png" />
+
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
+	rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/css/signin.css" rel="stylesheet" />
+
+</head>
+<body class="text-center">
+    
+<main class="form-signin w-100 m-auto">
+  <form method="post" th:action="@{/login}">
+    <img class="mb-4" src="image/alunos.png" alt="" width="72" height="57">
+    <h1 class="h3 mb-3 fw-normal">Efetue Login</h1>
+	<div th:if="${alerta != null}" th:class="${alerta == 'erro'} ? 'alert alert-danger' : 'alert alert-success'"
+				 role="alert">
+			  <h4 th:text="${titulo}" class="alert-heading">Credenciais...</h4>
+			  <p th:text="${texto}">Login ou senha incorretos...</p>
+			  <hr>
+			  <p class="mb-0"><small th:text="${subtexto}">Acesso permitido...</small></p>
+			</div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingInput" placeholder="usuário" name="username">
+      <label for="floatingInput">Login:</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      <label for="floatingPassword">Senha:</label>
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Lembrar
+      </label>
+    </div>
+    <nav class="nav nav-pills flex-column flex-sm-row">
+			<a class="flex-sm-fill text-sm-left nav-link text-decoration-none" th:href="@{/novaconta}"><i class="far fa-arrow-alt-circle-right"></i>&nbsp;Novo cadastro</a>
+			<a class="flex-sm-fill text-sm-left nav-link text-decoration-none" th:href="@{#}"><i class="fas fa-key"></i>&nbsp;Recuperar senha</a>
+			<a class="flex-sm-fill text-sm-left nav-link text-decoration-none" th:href="@{/}"><i class="fas fa-home"></i>&nbsp;Home</a>
+		</nav>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+    <p class="mt-5 mb-3 text-muted">&copy; Sistema Acadêmico</p>
+  </form>
+</main>
+
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/webjars/jquery/jquery.min.js"></script>
+	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('[data-toggle="popover"]').popover();
+		});
+
+		$(document).ready(function() {
+			$(".navbar-toggle").click(function() {
+				$(".sidebar").toggleClass("sidebar-open");
+			})
+		});
+	</script>
+</body>
+</html>

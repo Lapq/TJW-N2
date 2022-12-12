@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!-- Bootstrap core CSS -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
+	rel="stylesheet" />
+	
+<link href="/css/header.css" rel="stylesheet" type="text/css" />
+<meta charset="UTF-8">
+</head>
+<body>
+	<header th:fragment="cabecalho">
+		<nav
+			class="navbar navbar-inverse navbar navbar-dark bg-dark fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="btn btn-dark navbar-toggle pull-left">
+						<i class="oi oi-menu"></i>
+					</button>
+					<a class="navbar-brand " href="/">Sistema Acadêmico</a>
+				</div>
+				<div th:if="${#request.userPrincipal}" id="user details">
+					<form method="post" th:action="@{/logout}">
+						<a class="usuario" id="nome"><span id="usuarionome" th:text="${user} ? ${user.getUsername()}"></span></a>
+						<button class="btn btn-light" type="submit">Deslogar</button>
+					</form>
+				</div>
+				<div th:if="!${#request.userPrincipal}" id="log-in">
+					<a class="btn btn-dark" href="/login">Logar/Registrar</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+</body>
+</html>

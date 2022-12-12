@@ -1,0 +1,9 @@
+div[id="user details"]{
+	position: relative;
+	float: right;
+	border: 2px
+}
+
+span[id="usuarionome"]{
+	color: white;
+}
